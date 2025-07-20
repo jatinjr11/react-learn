@@ -13,12 +13,14 @@ import { UserContext } from './UserContext'
 import Parent from './Parent'
 import GrandChild from './GrandChild'
 import MyPureComponent from './MyPureComponent'
+import FuncPureComp from './FuncPureComp'
 // import Profile
 const Profile = lazy(() => import('./Profile'))
 const Setting = lazy(() => import('./Setting'));
 // import Setting from "./Setting"
 
 function App() {
+  const [count, setCOunt] = useState(0);
   return (
     <>
       {/* <div>
@@ -41,7 +43,11 @@ function App() {
         <Parent />
       </UserContext.Provider> */}
 
-      <MyPureComponent name={"Sachin Saini"} age={23} />
+      {/* <MyPureComponent name={"Sachin Saini"} age={23} /> */}
+
+      <button onClick={() => setCOunt(count + 1)} >Increment</button>
+      {/* <FuncPureComp name={"Sachin"} /> */}
+      <FuncPureComp count={count} />
     </>
   )
 }
