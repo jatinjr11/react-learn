@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -20,7 +20,18 @@ const Setting = lazy(() => import('./Setting'));
 // import Setting from "./Setting"
 
 function App() {
-  const [count, setCOunt] = useState(0);
+  const [count, setCount] = useState(0);
+  const [data, setData] = useState(0);
+
+  useEffect(()=> {
+    callOnce()
+  },[count]);
+
+  function callOnce(){
+    console.log("callOnce function called");
+  }
+
+
   return (
     <>
       {/* <div>
@@ -45,9 +56,14 @@ function App() {
 
       {/* <MyPureComponent name={"Sachin Saini"} age={23} /> */}
 
-      <button onClick={() => setCOunt(count + 1)} >Increment</button>
+      {/* <button onClick={() => setCOunt(count + 1)} >Increment</button> */}
       {/* <FuncPureComp name={"Sachin"} /> */}
-      <FuncPureComp count={count} />
+      {/* <FuncPureComp count={count} /> */}
+
+      <h1>useEffect Hook</h1>
+      <button onClick={()=> setCount(count+1)}>Counter {count}</button>
+      <button onClick={()=> setData(data+1)}>Data {data}</button>
+
     </>
   )
 }
