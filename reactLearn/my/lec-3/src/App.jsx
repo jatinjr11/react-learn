@@ -14,6 +14,7 @@ import Parent from './Parent'
 import GrandChild from './GrandChild'
 import MyPureComponent from './MyPureComponent'
 import FuncPureComp from './FuncPureComp'
+import Counter from './Counter'
 // import Profile
 const Profile = lazy(() => import('./Profile'))
 const Setting = lazy(() => import('./Setting'));
@@ -23,29 +24,29 @@ function App() {
   const [count, setCount] = useState(0);
   const [data, setData] = useState(0);
 
-  useEffect(()=> {
-    callOnce()
-  },[count]);
+  // useEffect(()=> {
+  //   callOnce()
+  // },[count]);
 
-  function callOnce(){
+  function callOnce() {
     console.log("callOnce function called");
   }
 
 
   return (
     <>
-      {/* <div>
+      <div>
         <Routes>
           <Route path='/' element={<Suspense fallback="Loading Home page...." > <Home /> </Suspense>} />
           <Route path='/about' element={<Suspense fallback="Loading About page..." > <About />  </Suspense>} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/users/:userID' element={<UserProfile />} />
-          <Route path='/dashboard' element={<Suspense fallback="Loading dasboard..." > <Dashboard /></Suspense>}>
+          <Route path='/dashboard' element={<Suspense fallback="Loading dasboard..." > <Dashboard /> </Suspense>}>
             <Route path='setting' element={<Suspense fallback="Loading setting page..."> <Setting /> </Suspense>} />
             <Route path='profile' element={<Suspense fallback="Loading Profile page..." > <Profile /> </Suspense>} />
           </Route>
         </Routes>
-      </div> */}
+      </div>
 
       {/* <PropsDrilling/> */}
 
@@ -60,10 +61,13 @@ function App() {
       {/* <FuncPureComp name={"Sachin"} /> */}
       {/* <FuncPureComp count={count} /> */}
 
-      <h1>useEffect Hook</h1>
+      {/* <h1>useEffect Hook</h1>
       <button onClick={()=> setCount(count+1)}>Counter {count}</button>
-      <button onClick={()=> setData(data+1)}>Data {data}</button>
+      <button onClick={()=> setData(data+1)}>Data {data}</button> */}
 
+      {/* <Counter count={count} data={data} />
+      <button onClick={() => setCount(count + 1)}>Counter {count}</button>
+      <button onClick={() => setData(data + 1)}>Data {data}</button> */}
     </>
   )
 }
