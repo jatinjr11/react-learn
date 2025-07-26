@@ -5,17 +5,25 @@ import './App.css'
 
 function App() {
 
+  /*
   const fruit = (fruitName)=> {
     // alert('Apple');
     alert(fruitName); 
   }
-
+  
   return (
-   <>
-   <h1>Event and Function Call</h1>
-   <button onClick={fruit} > CLick Me</button>
-   <button onClick={()=>fruit("banana")} > CLick Me</button>
-   </>
+    <>
+    <h1>Event and Function Call</h1>
+    <button onClick={fruit} > CLick Me</button>
+    <button onClick={()=>fruit("banana")} > CLick Me</button>
+    </>
+  )
+  */
+
+  return(
+    <>
+    <h1>KKKKK</h1>
+    </>
   )
 }
 
