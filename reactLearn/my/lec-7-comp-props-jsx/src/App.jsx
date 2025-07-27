@@ -1,14 +1,20 @@
 import Usercard from "./components/Usercard"
 import "./App.css"
+import Welcome from "./components/Welcome"
 
 function App() {
 
   return (
-   <div className="container">
+    <>
+      {/* <div className="container">
      <Usercard name="sachin" />
      <Usercard name="adi" />
      <Usercard name="dev" />
-   </div>
+   </div> */}
+
+   {/* class Comp... */}
+   <Welcome name="sachin" />
+    </>
   )
 }
 
