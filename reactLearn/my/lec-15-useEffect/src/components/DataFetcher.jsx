@@ -22,7 +22,7 @@ const DataFetcher = () => {
                     loading ? (<h1>Loading...</h1>) : (
                         <ul>
                             {data.map(user => (
-                                <li  key={user.id} > {user.firstName} </li>
+                                <li key={user.id} > {user.firstName} </li>
                             ))}
                         </ul>
                     )}

@@ -21,7 +21,7 @@ function App() {
     dispatch(reset())
   }
 
-  function handleIncByNum(){
+  function handleIncByNum() {
     dispatch(incrementByAmount(num))
   }
 
