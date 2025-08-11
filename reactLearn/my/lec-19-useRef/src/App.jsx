@@ -34,17 +34,18 @@ function App() {
   return (
     <>
 
-      {/* <div>
-        Count: {count}
+      <div>
+      <h2>  Count: {count}</h2>
       </div>
+      <br />
 
       <button ref={btnRef} onClick={handleInc} >Click Me!</button>
 
       <br /><br />
 
-      <button onClick={changeColor} >Change Color of 1st Button</button> */}
+      <button onClick={changeColor} >Change Color of 1st Button</button>
 
-      <StopWatch/>
+      {/* <StopWatch/> */}
 
     </>
   )
