@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'helvetica neue';
-  color: white;
+  font-family:sans-serif;
+  /* color: white; */
 }
 
 html,
@@ -70,7 +70,7 @@ body {
 }
 
 .center h3 span {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 400;
   color: #aeaeae;
 }
