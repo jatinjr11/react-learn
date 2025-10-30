@@ -5,13 +5,15 @@ const DataFetcher = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch('https://dummyjson.com/users'
+        async function fetchData() {
+            const res = await fetch("https://jsonplaceholder.typicode.com/users");
+            const data = await res.json();
+            setData(data);
+            console.log(data)
+            setLoading(false)
+        }
 
-        ).then(response => response.json())
-            .then(data => {
-                setData(data.users)
-                setLoading(false)
-            })
+        fetchData();
     }, []);
     // it will render only 1st render
 
@@ -21,11 +23,12 @@ const DataFetcher = () => {
                 {
                     loading ? (<h1>Loading...</h1>) : (
                         <ul>
-                            {data.map(user => (
-                                <li key={user.id} > {user.firstName} </li>
-                            ))}
+                            {data.map(user => {
+                                return <li key={user.id}> {user.username}</li>
+                            })}
                         </ul>
-                    )}
+                    )
+                }
             </div>
         </>
     )
