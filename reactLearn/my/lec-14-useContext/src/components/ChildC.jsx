@@ -1,22 +1,35 @@
+/*
+import { useContext } from "react"
+import { UserContext } from "../App"
+
+const ChildC = () => {
+  const user = useContext(UserContext); // useContext hook is used to access the context value
+  console.log(user);
+  return (
+    <div>
+      <ul>
+        <li>{user.name}</li>
+        <li>{user.age}</li>
+        <li>{user.gender}</li>
+      </ul>
+    </div>
+  )
+}
+
+export default ChildC
+
+*/
 import React, { useContext } from 'react'
 import { ThemeContext } from '../App'
-// import { UserContext } from '../App'
-const ChildC = () => {
-  // const user = useContext(UserContext);
-  const { theme, setTheme } = useContext(ThemeContext)
-  function handleClick() {
-    if (theme === 'light')
-      setTheme('dark')
-    else
-      setTheme('light')
 
+const ChildC = () => {
+  const { theme, setTheme } = useContext(ThemeContext);
+  function toggleTheme() {
+    setTheme(theme === 'light' ? 'dark' : 'light')
   }
   return (
     <div>
-      {/* {user.name} */}
-      {/* {theme} */}
-      <button onClick={handleClick}
-      >Chenge Theme</button>
+      <button onClick={toggleTheme} >Change Theme</button>
     </div>
   )
 }
