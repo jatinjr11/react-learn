@@ -1,6 +1,7 @@
 /*
 import React, { createContext, useState } from 'react'
 import ChildA from './components/ChildA'
+import './index.css'
 
 // step-1: create context
 const UserContext = createContext();
@@ -11,24 +12,25 @@ const UserContext = createContext();
 
 
 const App = () => {
-  const [user, setUser] = useState({ name: "Sachin", age: 18, gender: "male" });
+  const [user, setUser] = useState({name: "Sachin"});
   return (
     <>
-      <UserContext.Provider value={user} >
-        <ChildA />
-      </UserContext.Provider>
+    <UserContext.Provider value={user}>
+    <ChildA />
+    </UserContext.Provider>
     </>
-  )
-}
+    )
+    }
+    
+    export default App
+    export {UserContext}
+    */
 
-export default App
-export { UserContext }
+/*
 */
-
-import React, { createContext, useState } from 'react'
+import { createContext, useState } from 'react'
 import ChildA from './components/ChildA'
 
- import './index.css'
 const ThemeContext = createContext();
 
 const App = () => {
@@ -36,8 +38,8 @@ const App = () => {
   const [theme, setTheme] = useState('light');
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      <div className='container' style={{ backgroundColor: theme === 'light' ? 'black' : 'white' }}>
+    <ThemeContext.Provider value={{theme,setTheme}}>
+      <div id='container' style={{backgroundColor: theme === 'light' ? 'beige' : 'black', color: theme === 'light' ? 'black': 'white' }}>
         <ChildA />
       </div>
     </ThemeContext.Provider>
