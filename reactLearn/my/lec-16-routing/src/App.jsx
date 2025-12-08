@@ -1,48 +1,71 @@
-import About from "./components/About";
-import Dashboard from "./components/Dashboard";
-import Home from "./components/Home";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import ParamsComp from "./components/ParamsComp";
+import React from 'react'
+import Home from './components/Home';
+import Dashboard from './components/Dashboard';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import About from './components/About';
+import Navbar from './components/Navbar';
+import ParamsComp from './components/ParamsComp';
+import Courses from './components/Courses';
+import MockTest from './components/MockTest';
+import Reports from './components/Reports';
+import NotFound from './components/NotFound';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <div>
-      <Navbar/>
-      <Home />
-    </div>
-  },
-  {
-    path: '/about',
-    element: <div>
-      <Navbar/>
-      <About />
-    </div>
-  },
-  {
-    path: '/dashboard',
-    element: <div>
-      <Navbar/>
-      <Dashboard />
-    </div>
-  },
-  {
-    path: '/student/:id',
-    element: <div>
-      <Navbar/>
-      <ParamsComp/>
-    </div>
-  }
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <div>
+        <Navbar />
+        <Home />
+      </div>
+    },
+    {
+      path: '/about',
+      element: <div>
+        <Navbar />
+        <About />
+      </div>
+    },
+    {
+      path: '/dashboard',
+      element: <div>
+        <Navbar />
+        <Dashboard />
+      </div>,
+      children: [
+        {
+          path: 'courses',
+          element: <Courses/>
+        },
+        {
+          path: 'mock-tests',
+          element: <MockTest/>
+        },
+        {
+          path: 'reports',
+          element: <Reports/>
+        }
+      ]
+    },
+    {
+      path: '*',
+      element: <NotFound/>
+    },
+    {
+      path: '/student/:id',
+      element: <div>
+        <Navbar />
+        <ParamsComp />
+      </div>
+    }
+  ]
+);
 
 const App = () => {
   return (
-    <>
-     <div>
-     <RouterProvider router={router} />
-     </div>
-    </>
+    <div>
+      <RouterProvider router={router} />
+    </div>
   )
 }
 

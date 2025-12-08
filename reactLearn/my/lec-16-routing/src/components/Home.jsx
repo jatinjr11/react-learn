@@ -3,14 +3,18 @@ import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
   const navigate = useNavigate();
-
-  function handleClick() {
+  function handleClick(){
     navigate('/about');
   }
 
   return (
-    <div>Home
-      <button onClick={handleClick} >Move to About Page</button>
+    <div>
+      Home Page
+      <br />
+      <br />
+      <button onClick={handleClick} >
+        Move to About Page...
+      </button>
     </div>
   )
 }
