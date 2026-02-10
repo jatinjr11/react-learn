@@ -6,7 +6,7 @@ function App() {
   return (
    <>
    <div className='bg-green-600 '>
-    React Router...
+    React...
    </div>
    </>
   )
